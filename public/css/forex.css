@@ -1,0 +1,12 @@
+.currency-label span {
+    display: inline !important;
+    padding: 0.2em 0.6em 0.3em !important;
+    font-size: 75% !important;
+    font-weight: bold !important;
+    line-height: 1 !important;
+    color: #fff !important;
+    text-align: center !important;
+    white-space: nowrap;
+    vertical-align: baseline !important;
+    border-radius: 0.25em !important;
+}
