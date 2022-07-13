@@ -9,7 +9,7 @@
     <div class="row">
         <div class="col-md-9">
             @role('admin|super-admin')
-            <!-- First Row Starts Here -->
+            <!-- Pour l'administrateur principale ou le super admininstrateur -->
             <div class="row">
                 <div class="col-lg-3 col-sm-6">
                     <div data-toggle="play-animation" data-play="fadeInDown" data-offset="0" data-delay="100" class="panel widget">
@@ -77,14 +77,82 @@
                     </div>
                 </div>
             </div>
-            <!-- First Row Ends Here -->
+            <!-- end admin -->
             @else
-            ok
+            <!-- Pour le caissier  -->
+            <div class="row">
+                <div class="col-lg-3 col-sm-6">
+                    <div data-toggle="play-animation" data-play="fadeInDown" data-offset="0" data-delay="100" class="panel widget">
+                        <div class="panel-body bg-primary">
+                            <div class="row row-table row-flush">
+                                <div class="col-xs-12">
+                                    <p class="mb0">$759,781,417.92 <em class="fa fa-level-up">
+                                        </em>
+                                    </p>
+                                    <h4 class="m0">{{ __("Balance Totale")}}</h4>
+                                    <span class="m-t-10 fs-20"><i class="fa fa-dollar"></i>
+                                        {{__("Solde journaliere")}}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div data-toggle="play-animation" data-play="fadeInDown" data-offset="0" data-delay="500" class="panel widget">
+                        <div class="panel-body bg-success">
+                            <div class="row row-table row-flush">
+                                <div class="col-xs-12">
+                                    <p class="mb0">$1,947,201.24 <em class="fa fa-level-down"></em></p>
+                                    <h4 class="m0">{{__("Montant ecroule")}}</h4>
+                                    <span class="f-left m-t-10 fs-20">
+                                        <i class="fa fa-dollar"></i>
+                                        {{__("montant d'echange 24h")}}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div data-toggle="play-animation" data-play="fadeInDown" data-offset="0" data-delay="1000" class="panel widget">
+                        <div class="panel-body bg-danger">
+                            <div class="row row-table row-flush">
+                                <div class="col-xs-12">
+                                    <p class="mb0">32.4 Billions <em class="fa fa-refresh"></em></p>
+                                    <h4 class="m0">{{__("Montant Restant")}}</h4>
+                                    <span class="m-t-10 fs-20">
+                                        <i class="text-c-green f-16 fa fa-refresh"></i>
+                                        {{__("Balance personnelle")}}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div data-toggle="play-animation" data-play="fadeInDown" data-offset="0" data-delay="1500" class="panel widget">
+                        <div class="panel-body bg-warning">
+                            <div class="row row-table row-flush">
+                                <div class="col-xs-12">
+                                    <p class="mb0">1usd -> 2000 cdf <em class="fa fa-money"></em></p>
+                                    <h4 class="m0">{{__("Taux d'echange")}}</h4>
+                                    <span class="f-left m-t-10 fs-20">
+                                        <i class="fa fa-money"></i>
+                                        {{__("devise courant...")}}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End pour le caissier  -->
             @endrole
             <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
-                        <div class="panel-heading">All Markets
+                        <div class="panel-heading">{{__("Devises disponibles")}}
                             <a href="javascript:void(0);" data-perform="panel-dismiss" data-toggle="tooltip" title="" class="pull-right" data-original-title="Close Panel">
                                 <em class="fa fa-times"></em>
                             </a>
@@ -94,18 +162,18 @@
                         </div>
                         <div class="panel-wrapper collapse">
                             <div class="panel panel-default">
-                                <div class="panel-heading">All Markets |
-                                    <small>All Availble Markets</small>
+                                <div class="panel-heading">{{__("Devises disponibles")}}|
+                                    <small>{{__("Devises disponibles pour effectuer les echanges")}}</small>
                                 </div>
                                 <div class="panel-body">
                                     <table id="datatable1" class="table table-striped table-hover">
                                         <thead>
                                             <tr>
-                                                <th class="tableSmallPad">Coin</th>
-                                                <th class="tableSmallPad">Price</th>
-                                                <th class="tableSmallPad">Vol</th>
-                                                <th class="tableSmallPad">CHG</th>
-                                                <th class="tableSmallPad">Name</th>
+                                                <th class="tableSmallPad">{{__("Code")}}</th>
+                                                <th class="tableSmallPad">{{__("Prix")}}</th>
+                                                <th class="tableSmallPad">{{__("Volume")}}</th>
+                                                <th class="tableSmallPad">{{__("Changement")}}</th>
+                                                <th class="tableSmallPad">{{__("Nom")}}</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -214,7 +282,7 @@
                                     </table>
                                 </div>
                             </div>
-                            <div class="panel-footer">All Markets</div>
+                            <div class="panel-footer">{{__("Toutes les devises disponibles")}}</div>
                         </div>
                     </div>
                 </div>

@@ -163,7 +163,7 @@
                             </div>
                             <div class="user-block-info">
                                 <span class="user-block-name item-text">{{ Auth::user()->name }}</span>
-                                <span class="user-block-role"><i class="fa fa-check text-green"></i> Verified</span>
+                                <span class="user-block-role"> <i class="fa fa-check text-green"></i> Verified</span>
                                 <div class="label label-primary"><i class="fa fa-chevron-down"></i> Account Info</div>
                             </div>
                         </div>
@@ -223,7 +223,7 @@
                     <li>
                         <a href="prices.html" title="Dashboard" class="">
                             <em class="fa fa-btc"></em>
-                            <span class="item-text">Live Pricing</span>
+                            <span class="item-text">{{__("Valeur de devises")}}</span>
                         </a>
                     </li>
                     <li class="">
@@ -327,3 +327,4 @@
 <!-- Mirrored from dotjs.net/demo/crypto/cryptoapp/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 09 Jul 2022 08:30:20 GMT -->
 
 </html>
+

@@ -1,8 +1,15 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+//A effacer
 
+use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\PermissionRegistrar;
+
+//A effacer
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,6 +21,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/role', function () {
+    $User = User::find(2);
+    $User->assignRole('caissier');
+});
 Route::get('/admin', function () {
     return view('admin.admin');
 })->name('admin')->middleware('auth');

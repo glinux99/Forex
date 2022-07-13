@@ -32,11 +32,12 @@ class PermissionRoles extends Seeder
 
         // create roles and assign existing permissions
         $role1 = Role::create(['name' => 'caissier']);
-        $role1->givePermissionTo(['echange argent', 'etat de ma caisse', 'balance personnelle']);
+        $role1->givePermissionTo(['echanger argent', 'etat de ma caisse', 'balance personnelle']);
 
         $role2 = Role::create(['name' => 'admin']);
-        $role2->givePermissionTo('publish articles');
-        $role2->givePermissionTo('unpublish articles');
+        $role2->givePermissionTo('crud caissier');
+        $role2->givePermissionTo('devises crud');
+        $role2->givePermissionTo('balance tout');
 
         $role3 = Role::create(['name' => 'Super-Admin']);
         // gets all permissions via Gate::before rule; see AuthServiceProvider
