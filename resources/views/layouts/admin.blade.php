@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome/css/font-awesome.css')}}">
     <link rel="stylesheet" href="{{ asset('assets/plugins/animo/animate%2banimo.css')}}">
     <link rel="stylesheet" href="{{ asset('assets/plugins/csspinner/csspinner.min.css')}}">
+    <link href="{{ asset('css/forex.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('assets/app/css/app.css')}}">
     <script src="{{ asset('assets/plugins/modernizr/modernizr.js')}}">
     </script>
@@ -167,7 +168,9 @@
                             </div>
                         </div>
                         <ul class="nav collapse">
-                            <li><a href="javascript:void(0);">Open Orders</a>
+                            <li><a href="javascript:void(0);">
+                                    {{__("Open Orders")}}
+                                </a>
                             </li>
                             <li><a href="javascript:void(0);">{{__("Historique de transactions")}}</a>
                             </li>
@@ -183,7 +186,9 @@
                                     <div class="pull-right label label-danger"><i class="fa fa-unlock"></i> Not Enabled</div>
                                 </a>
                             </li>
-                            <li><a href="javascript:void(0);">Activity Log</a>
+                            <li><a href="javascript:void(0);">
+                                    {{__("Activité de Connection")}}
+                                </a>
                             </li>
                             <li><a href="javascript:void(0);">API</a>
                             </li>

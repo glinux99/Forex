@@ -8,6 +8,7 @@
     </h3>
     <div class="row">
         <div class="col-md-9">
+            @role('admin|super-admin')
             <!-- First Row Starts Here -->
             <div class="row">
                 <div class="col-lg-3 col-sm-6">
@@ -18,8 +19,9 @@
                                     <p class="mb0">$759,781,417.92 <em class="fa fa-level-up">
                                         </em>
                                     </p>
-                                    <h4 class="m0">Market Cap</h4>
-                                    <span class="m-t-10"><i class="fa fa-dollar"></i> Total Market Capital
+                                    <h4 class="m0">{{ __("Balance Totale")}}</h4>
+                                    <span class="m-t-10 fs-20"><i class="fa fa-dollar"></i>
+                                        {{__("Capital total du marche")}}
                                     </span>
                                 </div>
                             </div>
@@ -33,8 +35,9 @@
                                 <div class="col-xs-12">
                                     <p class="mb0">$1,947,201.24 <em class="fa fa-level-down"></em></p>
                                     <h4 class="m0">Trade Volume</h4>
-                                    <span class="f-left m-t-10">
-                                        <i class="fa fa-dollar"></i> 24h Trade Volume
+                                    <span class="f-left m-t-10 fs-20">
+                                        <i class="fa fa-dollar"></i>
+                                        {{__("montant d'echange 24h")}}
                                     </span>
                                 </div>
                             </div>
@@ -47,9 +50,10 @@
                             <div class="row row-table row-flush">
                                 <div class="col-xs-12">
                                     <p class="mb0">32.4 Billions <em class="fa fa-refresh"></em></p>
-                                    <h4 class="m0">Circ Supply</h4>
-                                    <span class="m-t-10">
-                                        <i class="text-c-green f-16 fa fa-refresh"></i> Circulating Supply
+                                    <h4 class="m0">{{__("Caisses")}}</h4>
+                                    <span class="m-t-10 fs-20">
+                                        <i class="text-c-green f-16 fa fa-refresh"></i>
+                                        {{__("Balance aux guchets")}}
                                     </span>
                                 </div>
                             </div>
@@ -62,9 +66,10 @@
                             <div class="row row-table row-flush">
                                 <div class="col-xs-12">
                                     <p class="mb0">40 Billions <em class="fa fa-money"></em></p>
-                                    <h4 class="m0">Total Supply</h4>
-                                    <span class="f-left m-t-10">
-                                        <i class="fa fa-money"></i> Total Supply
+                                    <h4 class="m0">{{__("Benefices")}}</h4>
+                                    <span class="f-left m-t-10 fs-20">
+                                        <i class="fa fa-money"></i>
+                                        {{__("Benefices journalieres")}}
                                     </span>
                                 </div>
                             </div>
@@ -73,6 +78,9 @@
                 </div>
             </div>
             <!-- First Row Ends Here -->
+            @else
+            ok
+            @endrole
             <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
@@ -257,7 +265,7 @@
         <div class="col-md-3">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <div class="panel-title">Coin Status</div>
+                    <div class="panel-title">{{__("Evolution de devises")}}</div>
                 </div>
                 <div class="list-group">
                     <div class="list-group-item">
