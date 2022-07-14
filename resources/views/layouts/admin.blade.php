@@ -210,52 +210,56 @@
                         <ul class="nav collapse in">
                             <li class="active">
                                 <a href="index.html" title="Default" data-toggle="" class="no-submenu">
-                                    <span class="item-text">Layout One</span>
+                                    <span class="item-text">{{__("Service disponible")}}</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="index-2.html" title="Layout 2" data-toggle="" class="no-submenu">
-                                    <span class="item-text">Layout Two</span>
+                                    <span class="item-text">{{__("Statistiques")}}</span>
                                 </a>
                             </li>
                         </ul>
                     </li>
+                    @role('caissier')
+                    <li>
+                        <a href="prices.html" title="Dashboard" class="">
+                            <em class="fa fa-btc"></em>
+                            <span class="item-text">{{__("Echanger une devise")}}</span>
+                        </a>
+                    </li>
+                    @endrole
                     <li>
                         <a href="prices.html" title="Dashboard" class="">
                             <em class="fa fa-btc"></em>
                             <span class="item-text">{{__("Valeur de devises")}}</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="prices.html" title="Dashboard" class="">
+                            <em class="fa fa-btc"></em>
+                            <span class="item-text">{{__("Transactions")}}</span>
+                        </a>
+                    </li>
                     <li class="">
                         <a href="datatable.html" title="Dashboard" class="">
                             <em class="fa fa-gear"></em>
-                            <span class="item-text">Shortcodes</span>
+                            <span class="item-text">{{__("Parametre")}}</span>
                         </a>
                     </li>
                     <li>
                         <a href="#" title="Pages" data-toggle="collapse-next" class="has-submenu">
                             <em class="fa fa-file-text"></em>
-                            <span class="item-text">Pages</span>
+                            <span class="item-text">{{__("Autres")}}</span>
                         </a>
                         <ul class="nav collapse ">
                             <li>
                                 <a href="login.html" title="Login" data-toggle="" class="no-submenu">
-                                    <span class="item-text">Login</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="signup.html" title="Sign up" data-toggle="" class="no-submenu">
-                                    <span class="item-text">Sign up</span>
+                                    <span class="item-text">{{__("Comptes Agents")}}</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="lock.html" title="Lock" data-toggle="" class="no-submenu">
-                                    <span class="item-text">Lock</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="recover.html" title="Recover Password" data-toggle="" class="no-submenu">
-                                    <span class="item-text">Recover Password</span>
+                                    <span class="item-text">{{__("Verouiller mon compte")}}</span>
                                 </a>
                             </li>
                         </ul>
