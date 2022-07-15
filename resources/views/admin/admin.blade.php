@@ -1,10 +1,12 @@
 @extends('layouts.admin')
 @section('content')
 <section class="main-content">
+    @can('echanger argent')
     <button type="button" class="btn btn-labeled btn-primary pull-right">
         <span class="btn-label"><i class="fa fa-dollar"></i>
-        </span>Goto Wallet</button>
-    <h3>Dashboard
+        </span>{{__("Echanger un devise")}}</button>
+    @endcan
+    <h3>{{__("Dashboard")}}
     </h3>
     <div class="row">
         <div class="col-md-9">
@@ -345,7 +347,7 @@
                                 </span>
                             </div>
                             <div class="media-body clearfix">
-                                <strong>Last Price</strong>
+                                <strong>{{__("Derniere prix")}}</strong>
                                 <p class="m0">
                                     <small class="text-green">$0.02 <i class="fa fa-money"></i></small>
                                 </p>
@@ -362,45 +364,48 @@
                                 </span>
                             </div>
                             <div class="media-body clearfix">
-                                <strong>24Hr Change</strong>
+                                <strong>{{__("Changement dans 24h")}}</strong>
                                 <p class="m0">
                                     <small class="text-green">+1.35%</small>
                                 </p>
-                                <p><i class="fa fa-plus"></i> Gainer <i class="fa fa-level-up text-green"></i></p>
+                                <p><i class="fa fa-plus"></i> {{__("Gagnant")}} <i class="fa fa-level-up text-green"></i></p>
                             </div>
                         </div>
                     </div>
                     <div class="list-group-item">
-                        <div class="media">
-                            <div class="pull-left">
-                                <span class="fa-stack fa-lg">
-                                    <em class="fa fa-circle fa-stack-2x text-danger"></em>
-                                    <em class="fa fa-level-down fa-stack-1x fa-inverse text-white"></em>
-                                </span>
-                            </div>
-                            <div class="media-body clearfix">
-                                <strong>24Hr Low</strong>
-                                <p class="m0">
-                                    <small class="text-danger">$0.02</small>
-                                </p>
-                                <p><i class="fa fa-btc"></i> 0.00000261 <i class="fa fa-level-down text-danger"></i></p>
+                        <div>{{__("Statistiques Hebdomadaire")}}</div>
+                        <div class="mt-4 ms-4">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <span class="fa-stack fa-lg">
+                                        <em class="fa fa-circle fa-stack-2x text-danger"></em>
+                                        <em class="fa fa-level-down fa-stack-1x fa-inverse text-white"></em>
+                                    </span>
+                                </div>
+                                <div class="media-body clearfix">
+                                    <strong>{{__("Faible")}}</strong>
+                                    <p class="m0">
+                                        <small class="text-danger">$0.02</small>
+                                    </p>
+                                    <p><i class="fa fa-btc"></i> 0.00000261 <i class="fa fa-level-down text-danger"></i></p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="list-group-item">
-                        <div class="media">
-                            <div class="pull-left">
-                                <span class="fa-stack fa-lg">
-                                    <em class="fa fa-circle fa-stack-2x text-green"></em>
-                                    <em class="fa fa-level-up fa-stack-1x fa-inverse text-white"></em>
-                                </span>
-                            </div>
-                            <div class="media-body clearfix">
-                                <strong>24Hr High</strong>
-                                <p class="m0">
-                                    <small class="text-green">$0.02</small>
-                                </p>
-                                <p><i class="fa fa-btc"></i> 0.00000261 <i class="fa fa-level-up text-green"></i></p>
+                        <div class="list-group-item ">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <span class="fa-stack fa-lg">
+                                        <em class="fa fa-circle fa-stack-2x text-green"></em>
+                                        <em class="fa fa-level-up fa-stack-1x fa-inverse text-white"></em>
+                                    </span>
+                                </div>
+                                <div class="media-body clearfix">
+                                    <strong>{{__("Hausse")}}</strong>
+                                    <p class="m0">
+                                        <small class="text-green">$0.02</small>
+                                    </p>
+                                    <p><i class="fa fa-btc"></i> 0.00000261 <i class="fa fa-level-up text-green"></i></p>
+                                </div>
                             </div>
                         </div>
                     </div>

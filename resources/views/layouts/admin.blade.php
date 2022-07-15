@@ -219,19 +219,23 @@
                         </ul>
                     </li>
                     @role('caissier')
+                    @can('echanger argent')
                     <li>
                         <a href="prices.html" title="Dashboard" class="">
                             <em class="fa fa-btc"></em>
                             <span class="item-text">{{__("Echanger une devise")}}</span>
                         </a>
                     </li>
+                    @endcan
                     @elserole('admin|super-admin')
+                    @can('devises crud')
                     <li>
-                        <a href="prices.html" title="Dashboard" class="">
+                        <a href="{{ route('admin.devise.caisse')}}" title="Dashboard" class="">
                             <em class="fa fa-btc"></em>
                             <span class="item-text">{{__("Devise par caisse /24h")}}</span>
                         </a>
                     </li>
+                    @endcan
                     @endrole
                     <li>
                         <a href="prices.html" title="Dashboard" class="">
