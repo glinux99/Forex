@@ -200,7 +200,7 @@
                         </ul>
                     </li>
                     <li class="active">
-                        <a href="/admin" title="Markets" data-toggle="collapse-next" class="has-submenu">
+                        <a href="/admin" title="Markets" data-toggle="" class="has-submenu">
                             <em class="fa fa-home"></em>
                             <div class="label pull-right"><i class="fa fa-line-chart"></i></div>
                             <span class="item-text">{{__("Acceuil")}}</span>
@@ -306,39 +306,26 @@
     <!--[if lt IE 8]><script src="js/excanvas.min.js"></script><![endif]-->
     <script src="{{ asset('assets/app/js/tradify.js')}}"></script>
     <script>
-        $(document).ready(function() {
-            // Candlestick
-            $.getJSON('tradify/data.json', function(data) {
-
-                // create the chart
-                Highcharts.stockChart('candlestickChart', {
-
-                    chart: {},
-
-
-                    rangeSelector: {
-                        selected: 1
-                    },
-
-                    series: [{
-                        type: 'candlestick',
-                        name: 'SC-BTC',
-                        data: data,
-                        dataGrouping: {
-                            units: [
-                                [
-                                    'week', // unit name
-                                    [1] // allowed multiples
-                                ],
-                                [
-                                    'month',
-                                    [1, 2, 3, 4, 6]
-                                ]
-                            ]
-                        }
-                    }]
-                });
-            });
+        function deleteNewDevise(el) {
+            $(el).parents(".newDevise").remove();
+        }
+        $('#addElement').click(function() {
+            $('#addDevise').append(`<div class="newDevise">
+                                                                        <label for="" class="form-label">{{__("Montant")}} # <span>1</span></label>
+                                                                        <div class="row">
+                                                                            <div class="col-md-9">
+                                                                                <div class="input-group mb-2">
+                                                                                    <input type="text" class="form-control">
+                                                                                    <div class="input-group-btn">
+                                                                                        <select name="code" id="inputcode" class="form-control" required="required">
+                                                                                            <option value="">USD</option>
+                                                                                        </select>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                           <button type="button" class="ms-2 col-md-2 btn btn-danger" onclick="deleteNewDevise(this)"><span class="fa fa-trash-o me-1 fs-2"></span></button>
+                                                                        </div>
+                                                                    </div>`);
         });
     </script>
 </body>
