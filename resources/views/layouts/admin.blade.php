@@ -17,10 +17,7 @@
     <link rel="stylesheet" href="{{ asset('assets/plugins/csspinner/csspinner.min.css')}}">
     <link href="{{ asset('css/forex.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('assets/app/css/app.css')}}">
-    <script src="{{ asset('assets/plugins/modernizr/modernizr.js')}}">
-    </script>
-    <script src="{{ asset('assets/plugins/fastclick/fastclick.js')}}">
-    </script>
+    >
 </head>
 
 <body>
@@ -35,6 +32,7 @@
 
 
     <section class="wrapper">
+        @include('layouts.modals')
         <nav class="navbar navbar-default navbar-top navbar-fixed-top">
             <div class="navbar-header">
                 <a href="#" class="navbar-brand">
@@ -227,6 +225,13 @@
                             <span class="item-text">{{__("Echanger une devise")}}</span>
                         </a>
                     </li>
+                    @elserole('admin|super-admin')
+                    <li>
+                        <a href="prices.html" title="Dashboard" class="">
+                            <em class="fa fa-btc"></em>
+                            <span class="item-text">{{__("Devise par caisse /24h")}}</span>
+                        </a>
+                    </li>
                     @endrole
                     <li>
                         <a href="prices.html" title="Dashboard" class="">
@@ -252,11 +257,13 @@
                             <span class="item-text">{{__("Autres")}}</span>
                         </a>
                         <ul class="nav collapse ">
+                            @role('admin|super-admin')
                             <li>
-                                <a href="login.html" title="Login" data-toggle="" class="no-submenu">
+                                <a href="{{ route('admin.agent.view')}}" title="Login" data-toggle="" class="no-submenu">
                                     <span class="item-text">{{__("Comptes Agents")}}</span>
                                 </a>
                             </li>
+                            @endrole
                             <li>
                                 <a href="lock.html" title="Lock" data-toggle="" class="no-submenu">
                                     <span class="item-text">{{__("Verouiller mon compte")}}</span>
@@ -287,6 +294,10 @@
     <script src="{{ asset('assets/plugins/datatable/extensions/datatable-bootstrap/js/dataTables.bootstrapPagination.js')}}"></script>
     <script src="{{ asset('assets/tradify/highcharts.js')}}"></script>
     <script src="{{ asset('assets/tradify/exporting.js')}}"></script>
+    <script src="{{ asset('assets/plugins/modernizr/modernizr.js')}}">
+    </script>
+    <script src="{{ asset('assets/plugins/fastclick/fastclick.js')}}">
+    </script>
     <script src="{{ asset('assets/plugins/datatable/extensions/ColVis/js/dataTables.colVis.js')}}"></script>
     <!--[if lt IE 8]><script src="js/excanvas.min.js"></script><![endif]-->
     <script src="{{ asset('assets/app/js/tradify.js')}}"></script>

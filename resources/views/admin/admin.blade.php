@@ -293,7 +293,7 @@
                     <div class="panel panel-default">
                         <div class="panel-collapse">
                             <div class="panel-body">
-                                <h4>BTC-SC</h4>
+                                <h4>{{__("Statistiques")}}</h4>
                                 <div id="candlestickChart" class="h-500">
 
                                 </div>

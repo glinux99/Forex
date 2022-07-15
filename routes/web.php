@@ -25,12 +25,18 @@ Route::get('/role', function () {
     $User = User::find(2);
     $User->assignRole('caissier');
 });
+Route::get('/agent', function () {
+    return view('admin.add_agent');
+})->name('admin.agent.view');
 Route::get('/admin', function () {
     return view('admin.admin');
 })->name('admin')->middleware('auth');
 Route::get('/', function () {
     return view('index');
 })->name('index');
+Route::get('/test', function () {
+    return view('test');
+});
 Route::get('/index', function () {
     return redirect(url('/#About'));
 });
