@@ -24,6 +24,9 @@ use Spatie\Permission\PermissionRegistrar;
 Route::get('/devise', function () {
     return view('admin.devise_par_caisse');
 })->name('admin.devise.caisse');
+Route::get('/deviseadd', function () {
+    return view('admin.valeur_devises');
+})->name('admin.nouvelle.devise');
 Route::get('/role', function () {
     $User = User::find(2);
     $User->assignRole('caissier');

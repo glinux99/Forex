@@ -238,7 +238,7 @@
                     @endcan
                     @endrole
                     <li>
-                        <a href="prices.html" title="Dashboard" class="">
+                        <a href="{{ route('admin.nouvelle.devise')}}" title="Dashboard" class="">
                             <em class="fa fa-btc"></em>
                             <span class="item-text">{{__("Valeur de devises")}}</span>
                         </a>
