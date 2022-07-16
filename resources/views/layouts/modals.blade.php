@@ -73,6 +73,10 @@
                     <h4 id="deviseLabel" class="modal-title">{{__("Ajouter une nouvelle devise")}}</h4>
                 </div>
                 <div class="modal-body mx-5">
+
+                    <div class="row mb-3">
+                        <small>{{__("Les valeurs entrees sont equivantes a la devise ")}} <span>USD</span>, {{__("pour changer la devise de reference, cliquez")}} <a href="#" class="nav-link">{{__("ici")}}</a></small>
+                    </div>
                     <div class="row mb-3">
                         <label for="name" class="col-md-4 col-form-label text-md-end">{{ __("Designation") }}</label>
                         <div class="col-md-8 ">
@@ -109,7 +113,7 @@
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label for="password" class="col-md-4 col-form-label text-md-end">{{ __("Valeur reelle") }}</label>
+                        <label for="password" class="col-md-4 col-form-label text-md-end">{{ __("Valeur reelle en ") }} <span>(USD)</span></label>
 
                         <div class="col-md-8 ">
                             <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
@@ -122,7 +126,7 @@
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __("Valeur d'echange") }}</label>
+                        <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __("Valeur d'echange en ") }}<span>(USD)</span></label>
                         <div class="col-md-8 ">
                             <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                         </div>
