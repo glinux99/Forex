@@ -297,7 +297,7 @@
                             <div class="panel-body">
                                 <h4>{{__("Statistiques")}}</h4>
                                 <div id="candlestickChart" class="h-500">
-
+                                    <span data-bar-color="danger" class="inlinesparkline">1,4,4,7,5,9,10,15</span>
                                 </div>
                             </div>
                         </div>

@@ -12,12 +12,13 @@
     <meta name="author" content="">
     <title>Tradify - Responsive Crypto/Stock Trading User Interface</title>
     <link rel="stylesheet" href="{{ asset('assets/app/css/bootstrap.css')}}">
+    <link href="{{ asset('css/lg.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome/css/font-awesome.css')}}">
     <link rel="stylesheet" href="{{ asset('assets/plugins/animo/animate%2banimo.css')}}">
     <link rel="stylesheet" href="{{ asset('assets/plugins/csspinner/csspinner.min.css')}}">
     <link href="{{ asset('css/forex.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('assets/app/css/app.css')}}">
-    >
+
 </head>
 
 <body>
@@ -131,9 +132,9 @@
                             <em class="fa fa-user"></em>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">{{__("Profile")}}</a>
+                            <li><a href="{{route('profile.me')}}">{{__("Profile")}}</a>
                             </li>
-                            <li><a href="#">{{__("Settings")}}</a>
+                            <li><a href="{{route('parametre')}}">{{__("Parametre")}}</a>
                             </li>
                             <li class="divider"></li>
                             <li>
@@ -252,7 +253,7 @@
                         </a>
                     </li>
                     <li class="">
-                        <a href="datatable.html" title="Dashboard" class="">
+                        <a href="{{ route('parametre')}}" title="Dashboard" class="">
                             <em class="fa fa-gear"></em>
                             <span class="item-text">{{__("Parametre")}}</span>
                         </a>

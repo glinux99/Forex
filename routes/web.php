@@ -21,6 +21,12 @@ use Spatie\Permission\PermissionRegistrar;
 |
 */
 
+Route::get('/profile', function () {
+    return view('admin.profile');
+})->name('profile.me');
+Route::get('/parametre', function () {
+    return view('admin.parametre');
+})->name('parametre');
 Route::get('/historique', function () {
     return view('admin.historiqueConnection');
 })->name('historique.connection');
