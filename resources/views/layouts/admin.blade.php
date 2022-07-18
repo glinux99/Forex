@@ -306,6 +306,15 @@
     <!--[if lt IE 8]><script src="js/excanvas.min.js"></script><![endif]-->
     <script src="{{ asset('assets/app/js/tradify.js')}}"></script>
     <script>
+        $('#codeDevide, #codeQte').bind("focus blur change keyup", function() {
+            $('#codeQte').val($('#codeDevide').val());
+            $('.currentDevise').text($('#ccurrentDevise').val());
+        });
+        $('#currentDevise, #currentDevise2').bind("focus blur change keyup", function() {
+            $('#currentDevise2').text($('#currentDevise').val());
+        });
+    </script>
+    <script>
         function deleteNewDevise(el) {
             $(el).parents(".newDevise").remove();
         }

@@ -75,7 +75,22 @@
                 <div class="modal-body mx-5">
 
                     <div class="row mb-3">
-                        <small>{{__("Les valeurs entrees sont equivantes a la devise ")}} <span>USD</span>, {{__("pour changer la devise de reference, cliquez")}} <a href="#" class="nav-link">{{__("ici")}}</a></small>
+                        <small>{{__("Les valeurs entrees sont equivantes a la devise ")}} <span>USD</span>, {{__("pour changer la devise de reference, cliquez")}} <a data-toggle="collapse" href="#changeCurrentDevise" aria-expanded="false" aria-controls="changeCurrentDevise">{{__("ici")}}</a></small>
+                    </div>
+                    <div class="collapse" id="changeCurrentDevise">
+                        <p>
+                        <div class="row mb-3">
+                            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __("Devise de Ref") }}</label>
+                            <div class="col-md-8 ">
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus id="currentDevise">
+                                @error('name')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+                        </p>
                     </div>
                     <div class="row mb-3">
                         <label for="name" class="col-md-4 col-form-label text-md-end">{{ __("Designation") }}</label>
@@ -97,8 +112,10 @@
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
                                 <span class="input-group-btn">
 
-                                    <select name="devise" id="inputdevise" class="form-control" required="required">
-                                        <option value="">Devise</option>
+                                    <select name="devise" id="codeDevide" class="form-control" required="required">
+                                        <option value="Devise">Devise</option>
+                                        <option value="USD">USD</option>
+                                        <option value="CDF">CDF</option>
                                     </select>
 
                                 </span>
@@ -113,7 +130,29 @@
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label for="password" class="col-md-4 col-form-label text-md-end">{{ __("Valeur reelle en ") }} <span>(USD)</span></label>
+                        <label for="email" class="col-md-4 col-form-label text-md-end">{{ __("Qte en Stock") }}</label>
+
+                        <div class="col-md-8 ">
+
+                            <div class="input-group">
+                                <input id="email" type="number" value="0" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                <span class="input-group-btn">
+
+                                    <input type="text" name="code" id="codeQte" class="form-control" disabled>
+
+                                </span>
+
+                            </div>
+
+                            @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="password" class="col-md-4 col-form-label text-md-end">{{ __("Valeur reelle en ") }} <span class="currentDevise2">(USD)</span></label>
 
                         <div class="col-md-8 ">
                             <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
@@ -126,7 +165,7 @@
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __("Valeur d'echange en ") }}<span>(USD)</span></label>
+                        <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __("Valeur d'echange en ") }}<span class="currentDevise">(USD)</span></label>
                         <div class="col-md-8 ">
                             <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                         </div>
