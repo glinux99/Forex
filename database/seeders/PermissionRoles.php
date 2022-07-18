@@ -24,6 +24,7 @@ class PermissionRoles extends Seeder
         Permission::create(['name' => 'crud admin']);
         Permission::create(['name' => 'devises crud']);
         Permission::create(['name' => 'devises par caissier']);
+        Permission::create(['name' => 'logs']);
         Permission::create(['name' => 'balance tout']);
         Permission::create(['name' => 'balance personnelle']);
         Permission::create(['name' => 'etat de ma caisse']);

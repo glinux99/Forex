@@ -170,7 +170,9 @@
                                     {{__("Open Orders")}}
                                 </a>
                             </li>
-                            <li><a href="javascript:void(0);">{{__("Historique de transactions")}}</a>
+                            @can('logs')
+                            <li><a href="{{ route('historiques.activite')}}">{{__("Activites Agent")}}</a>
+                                @endcan
                             </li>
                             <li>
                                 <a href="javascript:void(0);">
@@ -184,7 +186,7 @@
                                     <div class="pull-right label label-danger"><i class="fa fa-unlock"></i> Not Enabled</div>
                                 </a>
                             </li>
-                            <li><a href="javascript:void(0);">
+                            <li><a href="{{ route('historique.connection')}}">
                                     {{__("Activité de Connection")}}
                                 </a>
                             </li>
@@ -244,7 +246,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="prices.html" title="Dashboard" class="">
+                        <a href="{{ route('historiques.transactions')}}" title="Dashboard" class="">
                             <em class="fa fa-btc"></em>
                             <span class="item-text">{{__("Transactions")}}</span>
                         </a>

@@ -21,6 +21,12 @@ use Spatie\Permission\PermissionRegistrar;
 |
 */
 
+Route::get('/historique', function () {
+    return view('admin.historiqueConnection');
+})->name('historique.connection');
+Route::get('/transaction', function () {
+    return view('admin.transaction');
+})->name('historiques.transactions');
 Route::get('/devise', function () {
     return view('admin.devise_par_caisse');
 })->name('admin.devise.caisse');
