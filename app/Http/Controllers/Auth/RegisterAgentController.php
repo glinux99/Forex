@@ -6,6 +6,9 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use phpDocumentor\Reflection\Types\Null_;
+use RealRashid\SweetAlert\Facades\Alert;
+use Throwable;
 
 class RegisterAgentController extends Controller
 {
@@ -14,9 +17,10 @@ class RegisterAgentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($alert = null)
     {
-        $user = User::all();
+        $user = User::paginate(5);
+        if ($alert) Alert::toast('<h4>Votre requete a ete execute avec succes !</h4>', 'success');
         return view('admin.add_agent', ['users' => $user]);
     }
 
@@ -38,12 +42,17 @@ class RegisterAgentController extends Controller
      */
     public function store(Request $data)
     {
-        User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
-        return RegisterAgentController::index();
+        try {
+            User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'password' => Hash::make($data['password']),
+            ]);
+            return RegisterAgentController::index(true);
+        } catch (Throwable $exc) {
+            $user = User::paginate(5);
+            return view('admin.add_agent', ['users' => $user]);
+        }
     }
 
     /**
