@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\RegisterAgentController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -23,6 +24,7 @@ use Spatie\Permission\PermissionRegistrar;
 */
 
 //Route::post('/createUser', [RegisterController::class, 'create'])->name('create.user');
+Route::post('crud', [RegisterAgentController::class, 'store'])->name('register.agent');
 Route::get('/profile', function () {
     return view('admin.profile');
 })->name('profile.me');
@@ -45,9 +47,7 @@ Route::get('/role', function () {
     $User = User::find(2);
     $User->assignRole('caissier');
 });
-Route::get('/agent', function () {
-    return view('admin.add_agent');
-})->name('admin.agent.view');
+Route::get('/agent', [RegisterAgentController::class, 'index'])->name('admin.agent.view');
 Route::get('/admin', function () {
     return view('admin.admin');
 })->name('admin')->middleware('auth');

@@ -1,7 +1,7 @@
 <!-- Modal Ajouter un agent -->
 <div id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade">
     <div class="modal-dialog modal-lg">
-        <form method="POST" action="{{ route('register') }}">
+        <form method="POST" action="{{ route('register.agent') }}">
             @csrf
             <div class="modal-content">
                 <div class="modal-header">

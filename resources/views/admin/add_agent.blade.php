@@ -24,6 +24,7 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach($users as $user)
                             <tr class="gradeX">
                                 <td>Trident</td>
                                 <td>Internet Explorer 4.0</td>
@@ -31,9 +32,11 @@
                                 <td><span data-bar-color="danger" class="inlinesparkline">1,4,4,7,5,9,10,15</span></td>
                                 <td>X</td>
                             </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
+                <button type="button" data-toggle="notify" data-message="Message with status.." data-options="{&quot;status&quot;:&quot;success&quot;}" class="btn btn-success top-0">Success</button>
             </div>
         </div>
     </div>
