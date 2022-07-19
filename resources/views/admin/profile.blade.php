@@ -13,6 +13,12 @@
                         </div>
                         <div class="content">
                             <div class="author">
+                                <style>
+                                    .avatar:hover {
+                                        transform: scale(1.2);
+                                        transition: transform 1s 0s ease;
+                                    }
+                                </style>
                                 <a href="#">
                                     <img class="avatar border-gray" src="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400" alt="..." />
 

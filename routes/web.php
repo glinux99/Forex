@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\RegisterController;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -21,6 +22,7 @@ use Spatie\Permission\PermissionRegistrar;
 |
 */
 
+//Route::post('/createUser', [RegisterController::class, 'create'])->name('create.user');
 Route::get('/profile', function () {
     return view('admin.profile');
 })->name('profile.me');

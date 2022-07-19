@@ -4,7 +4,7 @@
     @can('echanger argent')
     <button type="button" class="btn btn-labeled btn-primary pull-right">
         <span class="btn-label"><i class="fa fa-dollar"></i>
-        </span>{{__("Echanger un devise")}}</button>
+        </span>{{__("Echanger une devise")}}</button>
     @endcan
     <h3>{{__("Dashboard")}}
     </h3>
