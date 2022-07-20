@@ -48,10 +48,11 @@ class RegisterAgentController extends Controller
                 'email' => $data['email'],
                 'password' => Hash::make($data['password']),
             ]);
-            return RegisterAgentController::index(true);
-        } catch (Throwable $exc) {
             $user = User::paginate(5);
+            Alert::toast('<h4>Votre requete a ete execute avec succes !</h4>', 'success');
             return view('admin.add_agent', ['users' => $user]);
+        } catch (Throwable $exc) {
+            return redirect()->action([RegisterAgentController::class, 'index']);
         }
     }
 
