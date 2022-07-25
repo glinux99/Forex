@@ -82,7 +82,7 @@
                         <div class="row mb-3">
                             <label for="name" class="col-md-4 col-form-label text-md-end">{{ __("Devise de Ref") }}</label>
                             <div class="col-md-8 ">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus id="currentDevise">
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="deviseRef" value="{{ old('name') }}" required autocomplete="name" autofocus id="currentDevise">
                                 @error('name')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -95,7 +95,7 @@
                     <div class="row mb-3">
                         <label for="name" class="col-md-4 col-form-label text-md-end">{{ __("Designation") }}</label>
                         <div class="col-md-8 ">
-                            <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                            <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="designation" value="{{ old('name') }}" required autocomplete="name" autofocus>
                             @error('name')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -109,7 +109,7 @@
                         <div class="col-md-8 ">
 
                             <div class="input-group">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                <input id="email" type="text" class="form-control @error('pays') is-invalid @enderror" name="pays" value="{{ old('pays') }}" required autocomplete="pays">
                                 <span class="input-group-btn">
 
                                     <select name="devise" id="codeDevide" class="form-control" required="required">
@@ -135,7 +135,7 @@
                         <div class="col-md-8 ">
 
                             <div class="input-group">
-                                <input id="email" type="number" value="0" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                <input id="email" type="number" value="0" class="form-control @error('email') is-invalid @enderror" name="qte" value="{{ old('email') }}" required autocomplete="email">
                                 <span class="input-group-btn">
 
                                     <input type="text" name="code" id="codeQte" class="form-control" disabled>
@@ -155,7 +155,7 @@
                         <label for="password" class="col-md-4 col-form-label text-md-end">{{ __("Valeur reelle en ") }} <span class="currentDevise2">(USD)</span></label>
 
                         <div class="col-md-8 ">
-                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                            <input id="password" type="text" class="form-control @error('password') is-invalid @enderror" name="valreel" required autocomplete="valreel">
 
                             @error('password')
                             <span class="invalid-feedback" role="alert">
@@ -167,7 +167,7 @@
                     <div class="row mb-3">
                         <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __("Valeur d'echange en ") }}<span class="currentDevise">(USD)</span></label>
                         <div class="col-md-8 ">
-                            <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                            <input id="password-confirm" type="password" class="form-control" name="valeur_echange" required autocomplete="valeur_echange">
                         </div>
                     </div>
                 </div>
