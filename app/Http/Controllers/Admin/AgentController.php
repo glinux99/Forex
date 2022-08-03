@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Exception;
 use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class AgentController extends Controller
@@ -24,7 +27,7 @@ class AgentController extends Controller
     }
     public function all_agent()
     {
-        $users = User::paginate(10);
+        $users = User::where('id', '!=', Auth::user()->id)->paginate(10);
         return view('users.agent.all_agent', ['users' => $users]);
     }
     /**
@@ -105,6 +108,12 @@ class AgentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::find($id);
+        try {
+            Storage::disk('public')->delete($user->images);
+        } catch (Exception $exc) {
+        }
+        User::find($id)->delete();
+        return \redirect()->route('agents.all');
     }
 }
