@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="aiz-main-content">
-    <form action="{{ route('create.agent')}}" method="post">
+    <form action="{{ route('create.agent')}}" method="post" autocomplete="off">
         @csrf
         <div class="px-15px px-lg-25px">
 
@@ -37,21 +37,35 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="">@lang('Adresse E-mail')</label>
-                                        <input type="text" class="form-control" name="email" id="" aria-describedby="helpId" placeholder="@lang('adresse email de l\'agent')">
+                                        <input type="text" class="form-control" name="email" id="" autocomplete="new-password" aria-describedby="helpId" placeholder="@lang('adresse email de l\'agent')">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="">@lang('Numero Tel')</label>
-                                        <input type="numero" class="form-control" name="numero" id="" aria-describedby="helpId">
+                                        <label for="">@lang('Mot de passe')</label>
+                                        <input type="text" class="form-control" name="password" id="" aria-describedby="helpId">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
+                                        <label for="">@lang('Numero Tel')</label>
+                                        <input type="numero" class="form-control" name="numero" id="" aria-describedby="helpId">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
                                         <label for="">@lang('Image')</label>
                                         <input type="file" class="form-control" name="images" id="" aria-describedby="helpId">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="">@lang('Dossiers')</label>
+                                        <input type="file" class="form-control" name="docs" id="" aria-describedby="helpId" disabled>
                                     </div>
                                 </div>
                             </div>

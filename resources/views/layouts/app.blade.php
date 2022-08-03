@@ -56,6 +56,7 @@
 
 <body class="">
     @include('layouts.modal')
+    @include('sweetalert::alert')
     <div class="aiz-main-wrapper">
         <div class="aiz-sidebar-wrap">
             <div class="aiz-sidebar left c-scrollbar">
@@ -297,7 +298,7 @@
             </div><!-- .aiz-topbar -->
             @yield('content')
             <div class="bg-white text-center py-3 px-15px px-lg-25px mt-auto">
-                <p class="mb-0">&copy;@php
+                <p class="mb-0 text-center">&copy;@php
                     echo Date('Y');
                     @endphp {{ Config('app.name')}}</p>
             </div>

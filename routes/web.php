@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/add-agent', [AgentController::class, 'index'])->name('agents.index');
-    Route::get('/create-agent', ['AgentController@store'])->name('create.agent');
+    Route::post('/create-agent', [AgentController::class, 'store'])->name('create.agent');
     Route::get('/all-agent', [AgentController::class, 'all_agent'])->name('agents.all');
 });
 Route::get('/', function () {

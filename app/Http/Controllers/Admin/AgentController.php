@@ -7,6 +7,7 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 use App\Http\Controllers\Controller;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class AgentController extends Controller
 {
@@ -58,6 +59,8 @@ class AgentController extends Controller
             $user->images = $path;
             $user->save();
         }
+        Alert::success('Success', 'Enregistrement a reussi avec success');
+        return redirect()->route('agents.all');
     }
 
     /**
