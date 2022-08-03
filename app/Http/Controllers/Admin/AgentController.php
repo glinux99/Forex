@@ -62,6 +62,9 @@ class AgentController extends Controller
             $user->images = $path;
             $user->save();
         }
+        $user->assignRole($request->role);
+        $user->syncPermissions([]);
+        $user->syncPermissions($request->permissions);
         Alert::success('Success', 'Enregistrement a reussi avec success');
         return redirect()->route('agents.all');
     }
@@ -114,6 +117,7 @@ class AgentController extends Controller
         } catch (Exception $exc) {
         }
         User::find($id)->delete();
+        Alert::toast('La suppression a ete fait avec success', 'success');
         return \redirect()->route('agents.all');
     }
 }

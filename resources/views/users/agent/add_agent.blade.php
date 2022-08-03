@@ -98,7 +98,7 @@
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="role" id="agent" value="agent" checked>
+                                    <input class="form-check-input" type="radio" name="role" id="agent" value="caissier" checked>
                                     <label class="form-check-label" for="agent">
                                         @lang("Agent")
                                     </label>
@@ -108,7 +108,7 @@
                                 <div class="form-group" id="permissions">
                                     <label for="inputrole" class="control-label">@lang("Permissions de l'agent")</label>
                                     <div class="">
-                                        <select class="selectpicker" title='Choisissez les permissions' data-header="@lang('les permissions')" multiple>
+                                        <select name="permissions[]" class="selectpicker" title='Choisissez les permissions' data-header="@lang('les permissions')" multiple>
                                             <optgroup label="@lang('Agent')" data-actions-box="true" id="selectAgent">
                                                 @foreach ($caisse as $role)
                                                 <option>{{$role->name}}</option>

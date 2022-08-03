@@ -111,8 +111,12 @@
                                             transition: transform 1s 0s ease;
                                         }
                                     </style>
-                                    <a href="{{ asset(Session('picprofile'))}}">
-                                        <img class="avatar border-gray" src="{{ asset(Session('picprofile'))}}" alt="Profile" />
+                                    <a href="{{ asset(Session::get('profile'))}}">
+                                        @if (Session::get('profile'))
+                                        <img class="avatar border-gray" src="{{ asset(Session::get('profile'))}}" alt="photo de profile" onerror="this.onerror=null;this.src='';">
+                                        @else
+                                        <img class="avatar border-gray" src="{{ asset('assets/img/default.png')}}" class="w-100">
+                                        @endif
                                         <h4 class="title text-center">{{ Auth::user()->name }}<br />
                                             <small>{{ auth()->user()->getRoleNames()->first()}}</small>
                                             <br>

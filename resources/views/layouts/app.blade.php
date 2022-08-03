@@ -101,9 +101,9 @@
                         </li>
 
                         <li class="aiz-side-nav-item">
-                            <a href="{{ ('annonces')}}" class="aiz-side-nav-link ">
+                            <a href="{{ route('approvisionnement')}}" class="aiz-side-nav-link ">
                                 <i class="las la-folder-open aiz-side-nav-icon"></i>
-                                <span class="aiz-side-nav-text">@lang("Approvisionnement Guchet")</span>
+                                <span class="aiz-side-nav-text">@lang("Approvisionnement Agent")</span>
                             </a>
                         </li>
                         <li class="aiz-side-nav-item">
@@ -270,7 +270,11 @@
                                 <a class="dropdown-toggle no-arrow text-dark" data-toggle="dropdown" href="javascript:void(0);" role="button" aria-haspopup="false" aria-expanded="false">
                                     <span class="d-flex align-items-center">
                                         <span class="avatar avatar-sm mr-md-2">
-                                            <img src="{{ asset(Session::get('picprofile'))}}" alt="photo de profile" onerror="this.onerror=null;this.src='htdtps://demo.activeitzone.com/ecommerce/public/assets/img/avatar-place.png';">
+                                            @if (Session::get('profile'))
+                                            <img src="{{ asset(Session::get('profile'))}}" alt="photo de profile" onerror="this.onerror=null;this.src='';">
+                                            @else
+                                            <img src="{{ asset('assets/img/default.png')}}" class="w-100">
+                                            @endif
                                         </span>
                                         <span class="d-none d-md-block">
                                             <span class="d-block fw-500">{{ Auth::user()->name}}</span>
@@ -361,6 +365,29 @@
     </section>
     <script src="{{asset('assets/js/vendors.js')}}"></script>
     <script src="{{asset('assets/js/aiz-core.js')}}"></script>
+    <script>
+        function deleteNewDevise(el) {
+            $(el).parents(".newDevise").remove();
+        }
+        $('#addElement').click(function() {
+            $('#addDevise').append(`<div class="newDevise">
+                                                                        <label for="" class="form-label">{{__("Montant")}} # <span>1</span></label>
+                                                                        <div class="row">
+                                                                            <div class="col-md-9">
+                                                                                <div class="input-group mb-2">
+                                                                                    <input type="text" class="form-control">
+                                                                                    <div class="input-group-btn">
+                                                                                        <select name="code" id="inputcode" class="form-control" required="required">
+                                                                                            <option value="">USD</option>
+                                                                                        </select>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                           <button type="button" class="col-2 btn btn-danger" onclick="deleteNewDevise(this)"><span class="la la-trash-o fs-2"></span></button>
+                                                                        </div>
+                                                                    </div>`);
+        });
+    </script>
     <script type="text/javascript">
         AIZ.plugins.chart('#pie-1', {
             type: 'doughnut',

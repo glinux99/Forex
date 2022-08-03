@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AgentController;
+use App\Http\Controllers\Forex\StockController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -20,6 +21,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/create-agent', [AgentController::class, 'store'])->name('create.agent');
     Route::get('/delete-agent/{id}', [AgentController::class, 'destroy'])->name('delete.agent');
     Route::get('/all-agent', [AgentController::class, 'all_agent'])->name('agents.all');
+    Route::get('/approvissionnement', [StockController::class, 'index'])->name('approvisionnement');
 });
 Route::get('/', function () {
     return view('welcome');
