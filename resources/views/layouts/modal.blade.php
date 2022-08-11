@@ -11,20 +11,20 @@
                     <div>
                         <div class="form-group">
                             <label for="">@lang('Description')</label>
-                            <input type="text" class="form-control" name="name" id="" aria-describedby="helpId" value="{{ Auth::user()->name}}">
+                            <input type="text" class="form-control" name="designation" id="" aria-describedby="helpId" value="{{ Auth::user()->name}}">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="">@lang('Code du devise')</label>
-                                <input type="text" class="form-control" name="name" id="" aria-describedby="helpId">
+                                <input type="text" class="form-control" name="code" id="" aria-describedby="helpId">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="">@lang('Pays')</label>
-                                <input type="text" class="form-control" name="name" id="" aria-describedby="helpId">
+                                <input type="text" class="form-control" name="pays" id="" aria-describedby="helpId">
                             </div>
                         </div>
                     </div>
@@ -32,7 +32,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="">@lang('Quantite en stock')</label>
-                                <input type="number" class="form-control" name="name" id="" aria-describedby="helpId">
+                                <input type="number" class="form-control" name="quantite" id="" aria-describedby="helpId">
                             </div>
                         </div>
                         <div class="col-md-6">
