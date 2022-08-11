@@ -73,7 +73,7 @@
                     </ul>
                     <ul class="aiz-side-nav-list" id="main-menu" data-toggle="aiz-side-menu">
                         <li class="aiz-side-nav-item">
-                            <a href="#" class="aiz-side-nav-link">
+                            <a href="{{ route('admin')}}" class="aiz-side-nav-link">
                                 <i class="las la-home aiz-side-nav-icon"></i>
                                 <span class="aiz-side-nav-text">@lang('Tableau de board')</span>
                             </a>
@@ -383,8 +383,10 @@
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
-                                                                           <button type="button" class="col-2 btn btn-danger" onclick="deleteNewDevise(this)"><span class="la la-trash-o fs-2"></span></button>
-                                                                        </div>
+                                                                            <div class="ms-2 col-md-2 col-sm-2 col-lg-2 col-xs-2">
+                                                                                <button type="button" class="btn btn-danger" onclick="deleteNewDevise(this)"><span class="la la-trash-o fs-2"></span></button>
+                                                                            </div>
+                                                                           </div>
                                                                     </div>`);
         });
     </script>

@@ -3,7 +3,6 @@
 <section class="main-content col-md-12 col-centered mx-auto">
     <div class="aiz-main-content">
         <div class="px-15px px-lg-25px">
-
             <div class="aiz-titlebar text-left mt-2 mb-3">
                 <div class="row align-items-center">
                     <div class="col-md-6">
